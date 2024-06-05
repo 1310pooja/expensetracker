@@ -59,31 +59,34 @@ def signup():
 
 @app.route('/register', methods =['GET', 'POST'])
 def register():
-    msg = ''
-    if request.method == 'POST' :
-        username = request.form['username']
-        email = request.form['email']
-        password = request.form['password']
-        
-        conn = sqlite3.connect('etdb.db')
-        cursor = conn.cursor()
+    try:
+        msg = ''
+        if request.method == 'POST' :
+            username = request.form['username']
+            email = request.form['email']
+            password = request.form['password']
+            
+            conn = sqlite3.connect('etdb.db')
+            cursor = conn.cursor()
 
-        cursor.execute('SELECT * FROM register WHERE username = ?', (username,))
-        account = cursor.fetchone()
+            cursor.execute('SELECT * FROM register WHERE username = ?', (username,))
+            account = cursor.fetchone()
 
-        if account:
-            msg = 'Account already exists!'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
-            msg = 'Invalid email address!'
-        elif not re.match(r'[A-Za-z0-9]+', username):
-            msg = 'Name must contain only characters and numbers!'
-        else:
-            cursor.execute('INSERT INTO register (username, email, password) VALUES (?, ?, ?)', (username, email, password))
-            conn.commit()
-            msg = 'You have successfully registered!'
-            return render_template('signup.html', msg=msg)
-        
-        conn.close()
+            if account:
+                msg = 'Account already exists!'
+            elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+                msg = 'Invalid email address!'
+            elif not re.match(r'[A-Za-z0-9]+', username):
+                msg = 'Name must contain only characters and numbers!'
+            else:
+                cursor.execute('INSERT INTO register (username, email, password) VALUES (?, ?, ?)', (username, email, password))
+                conn.commit()
+                msg = 'You have successfully registered!'
+                return render_template('signup.html', msg=msg)
+            
+            conn.close()
+    except:
+        return "register vaild emaid and password"
  
 #LOGIN--PAGE    
 @app.route("/signin")
