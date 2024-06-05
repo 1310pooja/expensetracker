@@ -42,6 +42,12 @@ conn.close()
 def home():
     return render_template("homepage.html")
 
+
+#HOME--PAGE
+@app.route("/chat")
+def chat():
+    return render_template("chat.html")
+
 @app.route("/")
 def add():
     return render_template("home.html")
