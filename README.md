@@ -1,4 +1,4 @@
-![image](https://github.com/1310pooja/expensetracker/assets/150259954/7aa91f6d-c41e-4efc-8a1f-8ee88d9b35a9)![image](https://github.com/1310pooja/expensetracker/assets/150259954/0de1cda8-7d15-45cb-8a67-59a9c1fd077c)# Expense_Tracker
+# Expense_Tracker
 Expense tracking is the systematic monitoring and recording of financial expenditures. Whether you’re an individual consumer or a business owner, this practice helps you manage and control your budget effectively.
 By maintaining a comprehensive log of expenses—covering purchases, bills, and various outflows—you gain transparency into where your money is going. It’s like having a financial compass that guides you toward better financial decisions For personal budgeting, expense tracking ensures you stay within your financial limits, avoid overspending, and allocate resources wisely.
 
